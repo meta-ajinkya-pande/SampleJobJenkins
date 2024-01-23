@@ -1,0 +1,4 @@
+<aura:component implements="lightning:actionOverride" access="global">
+    <lightning:card title="Approval Form" iconName="custom:custom30" />
+    <c:approval_component name="abc" />
+</aura:component>

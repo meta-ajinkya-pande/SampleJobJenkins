@@ -1,0 +1,4 @@
+<aura:component implements="lightning:actionOverride" access="global">
+    <lightning:card title="Request Type Form" iconName="custom:custom30" />
+    <c:requestForm name="xyz" />
+</aura:component>
