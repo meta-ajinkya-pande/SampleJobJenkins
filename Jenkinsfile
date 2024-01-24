@@ -2,8 +2,7 @@
 
 import groovy.json.JsonSlurperClassic
 
-pipeline {
-    agent any
+node {
     
     def SF_CONSUMER_KEY=env.SF_CONSUMER_KEY
     def SF_USERNAME=env.SF_USERNAME
