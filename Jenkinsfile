@@ -7,10 +7,10 @@ node {
     def SF_CONSUMER_KEY=env.SF_CONSUMER_KEY
     def SF_USERNAME=env.SF__DEV_USERNAME
     def SERVER_KEY_CREDENTIALS_ID=env.SERVER_KEY_CREDENTIALS_ID
-    def DEPLOYDIR=env.WORKSPACE/force-app/main/'default'
+    def DEPLOYDIR='./force-app/main/default'
     def TEST_LEVEL='RunLocalTests'
     def SF_INSTANCE_URL = env.SF_INSTANCE_URL ?: "https://test.salesforce.com"
-    def MANIFESTDIR = env.WORKSPACE/manifest
+    def MANIFESTDIR = './manifest'
     def toolbelt = tool 'salesforcecli'
 
     stage('checkout source') {
