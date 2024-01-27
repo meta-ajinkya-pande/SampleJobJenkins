@@ -20,14 +20,14 @@ node {
     withEnv(["HOME=${env.WORKSPACE}"]) {
         withCredentials([file(credentialsId: SERVER_KEY_CREDENTIALS_ID, variable: 'server_key_file')]) {
             stage('Authorize to Salesforce') {
-                rc = command "${toolbelt}/sf org login jwt --instanceurl ${SF_INSTANCE_URL} --client-id ${SF_CONSUMER_KEY} --jwt-key-file ${server_key_file} --username ${SF_USERNAME} --alias devxap"
+                rc = command "${toolbelt}\sf org login jwt --instanceurl ${SF_INSTANCE_URL} --client-id ${SF_CONSUMER_KEY} --jwt-key-file ${server_key_file} --username ${SF_USERNAME} --alias devxap"
                 if (rc != 0) {
                     error 'Salesforce org authorization failed.'
                 }
             }
 
             stage('Deploy and Run Tests') {
-                rc = command "${toolbelt}/sf project deploy start --manifest ${MANIFESTDIR}/package.xml --wait 10 ----source-dir ${DEPLOYDIR} --targetusername devxap --testlevel ${TEST_LEVEL}"
+                rc = command "${toolbelt}\sf project deploy start --manifest ${MANIFESTDIR}/package.xml --wait 10 ----source-dir ${DEPLOYDIR} --targetusername devxap --testlevel ${TEST_LEVEL}"
                 if (rc != 0) {
                     error 'Salesforce deploy and test run failed.'
                 }
