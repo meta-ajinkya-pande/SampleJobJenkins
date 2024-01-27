@@ -27,7 +27,7 @@ node {
             }
 
             stage('Deploy and Run Tests') {
-                rc = command "sf project deploy start --manifest ${MANIFESTDIR}/package.xml --wait 10 --source-dir ${DEPLOYDIR} --target-org devxap --testlevel ${TEST_LEVEL}"
+                rc = command "sf project deploy start --manifest ${MANIFESTDIR}/package.xml --wait 10 --source-dir ${DEPLOYDIR} --target-org devxap --test-level ${TEST_LEVEL}"
                 if (rc != 0) {
                     error 'Salesforce deploy and test run failed.'
                 }
