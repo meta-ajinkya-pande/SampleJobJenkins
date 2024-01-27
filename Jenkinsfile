@@ -7,10 +7,10 @@ node {
     def SF_CONSUMER_KEY=env.SF_CONSUMER_KEY
     def SF_USERNAME=env.SF_USERNAME
     def SERVER_KEY_CREDENTIALS_ID=env.SERVER_KEY_CREDENTIALS_ID
-    def DEPLOYDIR='src'
+    def DEPLOYDIR='${env.WORKSPACE}/output'
     def TEST_LEVEL='RunLocalTests'
     def SF_INSTANCE_URL = env.SF_INSTANCE_URL ?: "https://test.salesforce.com"
-
+    def MANIFESTDIR = '${env.WORKSPACE}/manifest'
     def toolbelt = tool 'salesforcecli'
 
     stage('checkout source') {
@@ -20,14 +20,14 @@ node {
     withEnv(["HOME=${env.WORKSPACE}"]) {
         withCredentials([file(credentialsId: SERVER_KEY_CREDENTALS_ID, variable: 'server_key_file')]) {
             stage('Authorize to Salesforce') {
-                rc = command "${toolbelt}/sfdx auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --jwtkeyfile ${server_key_file} --username ${SF_USERNAME} --setalias UAT"
+                rc = command "${toolbelt}/sf org login jwt --instanceurl ${SF_INSTANCE_URL} --client-id ${SF_CONSUMER_KEY} --jwt-key-file ${server_key_file} --username ${SF_USERNAME} --alias devxap"
                 if (rc != 0) {
                     error 'Salesforce org authorization failed.'
                 }
             }
 
             stage('Deploy and Run Tests') {
-                rc = command "${toolbelt}/sfdx force:mdapi:deploy --wait 10 --deploydir ${DEPLOYDIR} --targetusername UAT --testlevel ${TEST_LEVEL}"
+                rc = command "${toolbelt}/sf project deploy start --manifest ${MANIFESTDIR}/package.xml --wait 10 ----source-dir ${DEPLOYDIR} --targetusername devxap --testlevel ${TEST_LEVEL}"
                 if (rc != 0) {
                     error 'Salesforce deploy and test run failed.'
                 }
