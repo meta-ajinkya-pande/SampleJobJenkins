@@ -18,7 +18,7 @@ node {
     }
     
     withEnv(["HOME=${env.WORKSPACE}"]) {
-        withCredentials([file(credentialsId: SERVER_KEY_CREDENTALS_ID, variable: 'server_key_file')]) {
+        withCredentials([file(credentialsId: SERVER_KEY_CREDENTIALS_ID, variable: 'server_key_file')]) {
             stage('Authorize to Salesforce') {
                 rc = command "${toolbelt}/sf org login jwt --instanceurl ${SF_INSTANCE_URL} --client-id ${SF_CONSUMER_KEY} --jwt-key-file ${server_key_file} --username ${SF_USERNAME} --alias devxap"
                 if (rc != 0) {
