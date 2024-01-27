@@ -5,7 +5,7 @@ import groovy.json.JsonSlurperClassic
 node {
     
     def SF_CONSUMER_KEY=env.SF_CONSUMER_KEY
-    def SF_USERNAME=env.SF_USERNAME
+    def SF_USERNAME=env.SF__DEV_USERNAME
     def SERVER_KEY_CREDENTIALS_ID=env.SERVER_KEY_CREDENTIALS_ID
     def DEPLOYDIR='${env.WORKSPACE}/output'
     def TEST_LEVEL='RunLocalTests'
