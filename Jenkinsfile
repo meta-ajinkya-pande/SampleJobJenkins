@@ -12,7 +12,7 @@ node {
     def MANIFESTDIR = './manifest'
     def toolbelt = tool 'salesforcecli'
 
-    def filePath = readFile "${WORKSPACE}/build/property.json"
+    def filePath = readFile "./build/property.json"
     
     stage('checkout source') {
         checkout scm
