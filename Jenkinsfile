@@ -20,7 +20,7 @@ node {
         def filePath = readFile "./build/property.json"
         def lines = filePath.readLines()
         def jsonObj = readJSON text: lines
-        echo ${jsonObj.SF_CONSUMER_KEY}
+        echo ${jsonObj.SFCONSUMERKEY}
     }
     
     // withEnv(["HOME=${env.WORKSPACE}"]) {
