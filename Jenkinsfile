@@ -11,13 +11,13 @@ node {
     def SF_INSTANCE_URL = env.SF_INSTANCE_URL ?: "https://test.salesforce.com"
     def MANIFESTDIR = './manifest'
     def toolbelt = tool 'salesforcecli'
-    
+    def jsonObj;
     stage('checkout source') {
         checkout scm
     }
 
     stage('read propertyfile') {
-        def jsonObj = readJSON file: "./build/property.json"
+        jsonObj = readJSON file: "./build/property.json"
         // echo "${jsonObj.credentials[0]}"
     }
     
