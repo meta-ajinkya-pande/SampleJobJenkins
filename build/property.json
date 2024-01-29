@@ -1,6 +1,28 @@
 {
-  "SFUSERNAME": "ajinkya.pande@metacube.com.devxap",
-  "SFCONSUMERKEY": " 3MVG9_4NR96cWRpFZI7CQzfLCCdZONMPTKFwsexSVl2x2K1fkKTmPBFM7bWJYoyISv.f24.AViwQNUEAY6xpc",
-  "SERVERKEYCREDENTIALSID": "devxap",
-  "SERVICEID": "jenkins"
+  "credentials": [
+    "devxap": {
+      "SFUSERNAME": "ajinkya.pande@metacube.com.devxap",
+      "SFCONSUMERKEY": " 3MVG9_4NR96cWRpFZI7CQzfLCCdZONMPTKFwsexSVl2x2K1fkKTmPBFM7bWJYoyISv.f24.AViwQNUEAY6xpc",
+      "SERVERKEYCREDENTIALSID": "devxap",
+      "SERVICEID": "jenkins"
+    },
+    "staging": {
+      "SFUSERNAME": "ajinkya.pande@metacube.com.staging",
+      "SFCONSUMERKEY": " 3MVG9_4NR96cWRpFZI7CQzfLCCdZONMPTKFwsexSVl2x2K1fkKTmPBFM7bWJYoyISv.f24.AViwQNUEAY6xpc",
+      "SERVERKEYCREDENTIALSID": "devxap",
+      "SERVICEID": "jenkins"
+    },
+    "uat": {
+      "SFUSERNAME": "ajinkya.pande@metacube.com.uat",
+      "SFCONSUMERKEY": " 3MVG9_4NR96cWRpFZI7CQzfLCCdZONMPTKFwsexSVl2x2K1fkKTmPBFM7bWJYoyISv.f24.AViwQNUEAY6xpc",
+      "SERVERKEYCREDENTIALSID": "devxap",
+      "SERVICEID": "jenkins"
+    },
+    "prod": {
+      "SFUSERNAME": "ajinkya.pande@metacube.com.imsprod",
+      "SFCONSUMERKEY": " 3MVG9_4NR96cWRpFZI7CQzfLCCdZONMPTKFwsexSVl2x2K1fkKTmPBFM7bWJYoyISv.f24.AViwQNUEAY6xpc",
+      "SERVERKEYCREDENTIALSID": "devxap",
+      "SERVICEID": "jenkins"
+    }
+  ]
 }
