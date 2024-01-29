@@ -18,7 +18,7 @@ node {
 
     stage('read propertyfile') {
         def jsonObj = readJSON file: "./build/property.json"
-        echo ${jsonObj.credentials["devxap"]}
+        echo "${jsonObj.credentials[0]}"
     }
     
     // withEnv(["HOME=${env.WORKSPACE}"]) {
