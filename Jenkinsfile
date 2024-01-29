@@ -17,10 +17,8 @@ node {
     }
 
     stage('read propertyfile') {
-        def filePath = readFile "./build/property.json"
-        def lines = filePath.readLines()
-        def jsonObj = readJSON text: lines
-        echo ${jsonObj.SFCONSUMERKEY}
+        def jsonObj = readJSON file: "./build/property.json"
+        echo ${jsonObj.credentials["devxap"]}
     }
     
     // withEnv(["HOME=${env.WORKSPACE}"]) {
