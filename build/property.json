@@ -1,6 +1,6 @@
 {
-  SF__DEV_USERNAME : "ajinkya.pande@metacube.com.devxap",
-  SF_CONSUMER_KEY : " 3MVG9_4NR96cWRpFZI7CQzfLCCdZONMPTKFwsexSVl2x2K1fkKTmPBFM7bWJYoyISv.f24.AViwQNUEAY6xpc",
-  SERVER_KEY_CREDENTIALS_ID : "devxap",
-  SERVICE_ID : "jenkins"
+  "SFUSERNAME": "ajinkya.pande@metacube.com.devxap",
+  "SFCONSUMERKEY": " 3MVG9_4NR96cWRpFZI7CQzfLCCdZONMPTKFwsexSVl2x2K1fkKTmPBFM7bWJYoyISv.f24.AViwQNUEAY6xpc",
+  "SERVERKEYCREDENTIALSID": "devxap",
+  "SERVICEID": "jenkins"
 }
